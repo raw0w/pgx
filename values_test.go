@@ -10,6 +10,7 @@ import (
 	"testing"
 	"time"
 
+	"github.com/raw0w/pgx/v5"
 	"github.com/raw0w/pgx/v5/pgxtest"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

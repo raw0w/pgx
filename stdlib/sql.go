@@ -83,6 +83,7 @@ import (
 	"sync"
 	"time"
 
+	"github.com/raw0w/pgx/v5"
 	"github.com/raw0w/pgx/v5/pgconn"
 	"github.com/raw0w/pgx/v5/pgtype"
 	"github.com/raw0w/pgx/v5/pgxpool"

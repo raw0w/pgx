@@ -4,6 +4,7 @@ package pgxtest
 import (
 	"context"
 	"fmt"
+	"github.com/raw0w/pgx/v5"
 	"reflect"
 	"regexp"
 	"strconv"

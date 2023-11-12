@@ -1,9 +1,8 @@
 package stmtcache
 
 import (
-	"math"
-
 	"github.com/raw0w/pgx/v5/pgconn"
+	"math"
 )
 
 // UnlimitedCache implements Cache with no capacity limit.

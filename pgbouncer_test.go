@@ -5,6 +5,7 @@ import (
 	"os"
 	"testing"
 
+	"github.com/raw0w/pgx/v5"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

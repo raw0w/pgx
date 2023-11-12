@@ -11,6 +11,7 @@ import (
 	"time"
 
 	"github.com/jackc/puddle/v2"
+	"github.com/raw0w/pgx/v5"
 	"github.com/raw0w/pgx/v5/pgconn"
 )
 

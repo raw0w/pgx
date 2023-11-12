@@ -2,7 +2,6 @@ package stmtcache
 
 import (
 	"container/list"
-
 	"github.com/raw0w/pgx/v5/pgconn"
 )
 

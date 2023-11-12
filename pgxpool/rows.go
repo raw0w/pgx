@@ -1,6 +1,7 @@
 package pgxpool
 
 import (
+	"github.com/raw0w/pgx/v5"
 	"github.com/raw0w/pgx/v5/pgconn"
 )
 

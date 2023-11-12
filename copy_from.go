@@ -4,10 +4,10 @@ import (
 	"bytes"
 	"context"
 	"fmt"
+	"github.com/raw0w/pgx/v5/pgconn"
 	"io"
 
 	"github.com/raw0w/pgx/v5/internal/pgio"
-	"github.com/raw0w/pgx/v5/pgconn"
 )
 
 // CopyFromRows returns a CopyFromSource interface over the provided rows slice

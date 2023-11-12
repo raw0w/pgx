@@ -20,6 +20,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
+	"github.com/raw0w/pgx/v5"
 	"github.com/raw0w/pgx/v5/internal/pgio"
 	"github.com/raw0w/pgx/v5/internal/pgmock"
 	"github.com/raw0w/pgx/v5/pgconn"
