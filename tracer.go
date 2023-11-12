@@ -6,6 +6,22 @@ import (
 	"github.com/jackc/pgx/v5/pgconn"
 )
 
+// AcquireTracer - traces Acquire.
+type AcquireTracer interface {
+	// TraceAcquireStart is called at the beginning of Acquire.
+	// The returned context is used for the rest of the call and will be passed to the TraceAcquireEnd.
+	TraceAcquireStart(ctx context.Context, data TraceAcquireStartData) context.Context
+	TraceAcquireEnd(ctx context.Context, data TraceAcquireEndData)
+}
+
+type TraceAcquireStartData struct {
+	ConnConfig *pgconn.Config
+}
+
+type TraceAcquireEndData struct {
+	Err error
+}
+
 // QueryTracer traces Query, QueryRow, and Exec.
 type QueryTracer interface {
 	// TraceQueryStart is called at the beginning of Query, QueryRow, and Exec calls. The returned context is used for the

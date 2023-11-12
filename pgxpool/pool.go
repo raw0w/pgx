@@ -79,6 +79,8 @@ type Pool struct {
 	lifetimeDestroyCount int64
 	idleDestroyCount     int64
 
+	acquireTracer pgx.AcquireTracer
+
 	p                     *puddle.Pool[*connResource]
 	config                *Config
 	beforeConnect         func(context.Context, *pgx.ConnConfig) error
@@ -193,6 +195,10 @@ func NewWithConfig(ctx context.Context, config *Config) (*Pool, error) {
 		healthCheckPeriod:     config.HealthCheckPeriod,
 		healthCheckChan:       make(chan struct{}, 1),
 		closeChan:             make(chan struct{}),
+	}
+
+	if t, ok := config.ConnConfig.Tracer.(pgx.AcquireTracer); ok {
+		p.acquireTracer = t
 	}
 
 	var err error
@@ -499,9 +505,15 @@ func (p *Pool) createIdleResources(parentCtx context.Context, targetResources in
 
 // Acquire returns a connection (*Conn) from the Pool
 func (p *Pool) Acquire(ctx context.Context) (*Conn, error) {
+	if p.acquireTracer != nil {
+		ctx = p.acquireTracer.TraceAcquireStart(ctx, pgx.TraceAcquireStartData{ConnConfig: p.config.ConnConfig.Config.Copy()})
+	}
 	for {
 		res, err := p.p.Acquire(ctx)
 		if err != nil {
+			if p.acquireTracer != nil {
+				p.acquireTracer.TraceAcquireEnd(ctx, pgx.TraceAcquireEndData{Err: err})
+			}
 			return nil, err
 		}
 
@@ -516,6 +528,9 @@ func (p *Pool) Acquire(ctx context.Context) (*Conn, error) {
 		}
 
 		if p.beforeAcquire == nil || p.beforeAcquire(ctx, cr.conn) {
+			if p.acquireTracer != nil {
+				p.acquireTracer.TraceAcquireEnd(ctx, pgx.TraceAcquireEndData{Err: nil})
+			}
 			return cr.getConn(p, res), nil
 		}
 
