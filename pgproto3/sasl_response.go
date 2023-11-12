@@ -4,7 +4,7 @@ import (
 	"encoding/hex"
 	"encoding/json"
 
-	"github.com/jackc/pgx/v5/internal/pgio"
+	"github.com/raw0w/pgx/v5/internal/pgio"
 )
 
 type SASLResponse struct {

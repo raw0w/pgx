@@ -5,7 +5,7 @@ import (
 	"math"
 	"testing"
 
-	"github.com/jackc/pgx/v5/pgxtest"
+	"github.com/raw0w/pgx/v5/pgxtest"
 )
 
 func TestQcharTranscode(t *testing.T) {

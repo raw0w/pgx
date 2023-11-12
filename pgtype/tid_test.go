@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/jackc/pgx/v5/pgtype"
-	"github.com/jackc/pgx/v5/pgxtest"
+	"github.com/raw0w/pgx/v5/pgtype"
+	"github.com/raw0w/pgx/v5/pgxtest"
 )
 
 func TestTIDCodec(t *testing.T) {

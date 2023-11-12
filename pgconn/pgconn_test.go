@@ -20,12 +20,11 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/jackc/pgx/v5"
-	"github.com/jackc/pgx/v5/internal/pgio"
-	"github.com/jackc/pgx/v5/internal/pgmock"
-	"github.com/jackc/pgx/v5/pgconn"
-	"github.com/jackc/pgx/v5/pgproto3"
-	"github.com/jackc/pgx/v5/pgtype"
+	"github.com/raw0w/pgx/v5/internal/pgio"
+	"github.com/raw0w/pgx/v5/internal/pgmock"
+	"github.com/raw0w/pgx/v5/pgconn"
+	"github.com/raw0w/pgx/v5/pgproto3"
+	"github.com/raw0w/pgx/v5/pgtype"
 )
 
 const pgbouncerConnStringEnvVar = "PGX_TEST_PGBOUNCER_CONN_STRING"

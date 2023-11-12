@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"testing"
 
-	pgx "github.com/jackc/pgx/v5"
-	"github.com/jackc/pgx/v5/pgtype"
+	pgx "github.com/raw0w/pgx/v5"
+	"github.com/raw0w/pgx/v5/pgtype"
 	"github.com/stretchr/testify/require"
 )
 

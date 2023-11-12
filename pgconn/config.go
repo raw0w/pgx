@@ -19,7 +19,7 @@ import (
 
 	"github.com/jackc/pgpassfile"
 	"github.com/jackc/pgservicefile"
-	"github.com/jackc/pgx/v5/pgproto3"
+	"github.com/raw0w/pgx/v5/pgproto3"
 )
 
 type AfterConnectFunc func(ctx context.Context, pgconn *PgConn) error

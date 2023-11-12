@@ -4,7 +4,7 @@ import (
 	"context"
 	"testing"
 
-	pgx "github.com/jackc/pgx/v5"
+	pgx "github.com/raw0w/pgx/v5"
 	"github.com/stretchr/testify/require"
 )
 

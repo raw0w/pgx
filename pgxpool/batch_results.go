@@ -1,8 +1,7 @@
 package pgxpool
 
 import (
-	"github.com/jackc/pgx/v5"
-	"github.com/jackc/pgx/v5/pgconn"
+	"github.com/raw0w/pgx/v5/pgconn"
 )
 
 type errBatchResults struct {

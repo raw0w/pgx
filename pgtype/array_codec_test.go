@@ -7,9 +7,9 @@ import (
 	"strings"
 	"testing"
 
-	pgx "github.com/jackc/pgx/v5"
-	"github.com/jackc/pgx/v5/pgtype"
-	"github.com/jackc/pgx/v5/pgxtest"
+	pgx "github.com/raw0w/pgx/v5"
+	"github.com/raw0w/pgx/v5/pgtype"
+	"github.com/raw0w/pgx/v5/pgxtest"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

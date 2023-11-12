@@ -5,7 +5,7 @@ import (
 	"io"
 	"sync"
 
-	"github.com/jackc/pgx/v5/internal/iobufpool"
+	"github.com/raw0w/pgx/v5/internal/iobufpool"
 )
 
 const (

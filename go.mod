@@ -1,4 +1,4 @@
-module github.com/jackc/pgx/v5
+module github.com/raw0w/pgx/v5
 
 go 1.19
 

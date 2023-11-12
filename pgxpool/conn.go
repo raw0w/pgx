@@ -4,9 +4,8 @@ import (
 	"context"
 	"sync/atomic"
 
-	"github.com/jackc/pgx/v5"
-	"github.com/jackc/pgx/v5/pgconn"
 	"github.com/jackc/puddle/v2"
+	"github.com/raw0w/pgx/v5/pgconn"
 )
 
 // Conn is an acquired *pgx.Conn from a Pool.
